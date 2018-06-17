@@ -1,0 +1,4 @@
+jp.co.nmatsumoto.module.toEntity.GenerateToEntity
+jp.co.nmatsumoto.module.toMapper.GenerateToMapper
+jp.co.nmatsumoto.module.toProcessor.GenerateToProcessor
+jp.co.nmatsumoto.module.toRepository.GenerateToRepository

@@ -1,0 +1,29 @@
+group 'jp.co.nmatsumoto'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+mainClassName = 'jp.co.nmatsumoto.main.generatorMain'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.orangesignal', name: 'orangesignal-csv', version: '2.2.1'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'jp.co.nmatsumoto.main.generatorMain'
+    }
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
